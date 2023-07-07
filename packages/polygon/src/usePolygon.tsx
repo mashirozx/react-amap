@@ -16,6 +16,7 @@ export const usePolygon = (props = {} as UsePolygon) => {
       setPolygon(instance);
       return () => {
         if (instance) {
+          instance.hide();
           if (AMap.v) {
             map && map.remove(instance);
           } else {
